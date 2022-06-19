@@ -11,3 +11,6 @@
 * Luiz Alberto
 
 Fora o projeto lógico, esse repositório irá conter o script do projeto lógico que irá ser inserido em um SQL postgreSQL, que foi a forma indicada para fazer o script.
+
+## Pequenas observações:
+foi dividido na seguinte situação: tabelas azuis (tabelas principais qeu já haviam sido pedidas no projeto conceitual), tabelas amarelas (são as relações N:N) e por fim as tabelas verdes (são tabelas que foram necessárias implementar para  conseguir realizar as treis regras normais).
