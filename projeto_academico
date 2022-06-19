@@ -1,0 +1,1101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+<style>
+      .table {
+        background-color:#F5F5FF;
+        border-left:4px solid gray;
+        border-bottom:4px solid gray;
+        border-top:4px solid gray;
+        border-right:4px solid gray;
+        margin-bottom:3em;
+        margin-left:2em;
+        margin-right:2em;
+        padding:1em;
+      }
+      .tableNameHeading h1 {
+          display: inline;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-size:125%;
+        font-weight:bold;
+      }
+        
+      .tableNameHeading h2 {
+        display: inline;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-size:115%;
+        font-weight:normal;
+      }
+      
+      .tableComment { 
+        background-color:#e4efff; margin-bottom:20px;
+      }
+      
+      .tableDefinition { 
+        padding:2px;
+        border-collapse:collapse;
+        margin-top:1em;
+      }
+
+      .tdTableDefinition {
+        padding-right:10px;
+        vertical-align:top;
+        border-top:1px solid #C0C0C0;
+      }
+
+      .tdLogicalColName {
+        width:20em;
+      }
+      
+      .tdPhysicalColName {
+        width:20em;
+      }
+      
+      .tdDataType {
+        width:10em;
+      }
+
+      .tdPkFlag {
+        width:4em;
+      }
+
+      .tdNullFlag {
+        width:9em;
+      }
+
+      .tdTableHeading {
+        padding:2px;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-weight: bold;
+        vertical-align:top;
+        border-bottom: 1px solid #C0C0C0;
+        background-color: rgb(240,240,240);
+      }
+      
+      .subTitle {
+        font-family: Segoe UI, Arial, sans-serif;
+        font-weight: bold;
+      }
+
+      .references {
+      }
+      .comment {
+        color:#666666;
+        margin-left:3em;
+        padding:0.25em;
+      }
+    </style>
+<title>Projeto_Sistema_academico</title>
+</head>
+<body>
+<center>
+<h2>Projeto_Sistema_academico</h2>
+</center>
+<h3>List of tables</h3>
+<ul>
+<li>
+<a href="#alunos">alunos</a>
+</li>
+<li>
+<a href="#autor">autor</a>
+</li>
+<li>
+<a href="#compoe">compoe</a>
+</li>
+<li>
+<a href="#curso">curso</a>
+</li>
+<li>
+<a href="#curso_aluno">curso_aluno</a>
+</li>
+<li>
+<a href="#disciplinas">disciplinas</a>
+</li>
+<li>
+<a href="#emprestimos">emprestimos</a>
+</li>
+<li>
+<a href="#Endereco">Endereco</a>
+</li>
+<li>
+<a href="#envolvem">envolvem</a>
+</li>
+<li>
+<a href="#graduacao">graduacao</a>
+</li>
+<li>
+<a href="#OBRAS">OBRAS</a>
+</li>
+<li>
+<a href="#ofertas">ofertas</a>
+</li>
+<li>
+<a href="#pessoas">pessoas</a>
+</li>
+<li>
+<a href="#pos_graduacao">pos_graduacao</a>
+</li>
+<li>
+<a href="#professores">professores</a>
+</li>
+<li>
+<a href="#reservas">reservas</a>
+</li>
+<li>
+<a href="#telefone_pessoa">telefone_pessoa</a>
+</li>
+<li>
+<a href="#tipo">tipo</a>
+</li>
+<li>
+<a href="#volumes">volumes</a>
+</li>
+</ul>
+<div class="tableNameHeading">
+<h1>alunos<a name="alunos"></a>
+</h1>
+<h2>
+      (Physical Name: alunos)
+      </h2>
+<p class="comment">Tabela onde se armazena as informa&ccedil;&otilde;es dos alunos.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_pessoa (PK)</td><td class="tdTableDefinition">codigo_da_pessoa</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde armazena o c&oacute;digo dos alunos, &eacute; a PK desta tabela.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">matricula</td><td class="tdTableDefinition">matricula</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#curso_aluno">curso_aluno</a> referencing (codigo_da_pessoa)</li>
+<li>
+<a href="#pessoas">pessoas</a> referencing (codigo_da_pessoa)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>autor<a name="autor"></a>
+</h1>
+<h2>
+      (Physical Name: autor)
+      </h2>
+<p class="comment">Tabela onde armazena todos os autores dos livros.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_obra (PK)
+                &nbsp;(<a href="#OBRAS">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_obra</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">c&oacute;dido da obra &eacute; a PK desta tabela e a FK da tabela obras.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome_do_autor (PK)</td><td class="tdTableDefinition">nome_do_autor</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Este campo se encontra o nome de cada autor.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#OBRAS">OBRAS</a> through (codigo_da_obra)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>compoe<a name="compoe"></a>
+</h1>
+<h2>
+      (Physical Name: compoe)
+      </h2>
+<p class="comment">Tabela onde relaciona os cursos e disciplinas.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_disciplina (PK)
+                &nbsp;(<a href="#disciplinas">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_disciplina</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo c&oacute;digo da disciplina &eacute; a PK desta tabela e a PK da tabela disciplinas.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_do_curso (PK)
+                &nbsp;(<a href="#curso">FK</a>)
+              </td><td class="tdTableDefinition">codigo_do_curso</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo c&oacute;digo do curso &eacute; a PK desta tabela e a PK da tabela cursos.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#curso">curso</a> through (codigo_do_curso)</li>
+<li>
+<a href="#disciplinas">disciplinas</a> through (codigo_da_disciplina)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>curso<a name="curso"></a>
+</h1>
+<h2>
+      (Physical Name: curso)
+      </h2>
+<p class="comment">Tabela onde armazena todos os cursos.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_do_curso (PK)</td><td class="tdTableDefinition">codigo_do_curso</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde informa o c&oacute;digo dos cursos, &eacute; a PK desta tabela.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde informa o nome dos cursos.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_de_inicio</td><td class="tdTableDefinition">data_de_inicio</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde informa a data inicio de cada curso.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#compoe">compoe</a> referencing (codigo_do_curso)</li>
+<li>
+<a href="#curso_aluno">curso_aluno</a> referencing (codigo_do_curso)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>curso_aluno<a name="curso_aluno"></a>
+</h1>
+<h2>
+      (Physical Name: curso_aluno)
+      </h2>
+<p class="comment">Tabela onde se encontra a rela&ccedil;&atilde;o cursos e alunos.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_pessoa (PK)
+                &nbsp;(<a href="#alunos">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_pessoa</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo informa o c&oacute;digo da pessoa que esta direcionada ao determinado curso, &eacute; a PK desta tabela e a PK da tabela alunos.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_do_curso (PK)
+                &nbsp;(<a href="#curso">FK</a>)
+              </td><td class="tdTableDefinition">codigo_do_curso</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo informa o c&oacute;digo do curso que o aluno esta direcionado, &eacute; a PK desta tabela e a PK da tabela cursos.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#curso">curso</a> through (codigo_do_curso)</li>
+<li>
+<a href="#alunos">alunos</a> through (codigo_da_pessoa)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>disciplinas<a name="disciplinas"></a>
+</h1>
+<h2>
+      (Physical Name: disciplinas)
+      </h2>
+<p class="comment">Tabela onde armazena todas as disciplinas disponiveis.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_disciplina (PK)</td><td class="tdTableDefinition">codigo_da_disciplina</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde informa o c&oacute;digo da disciplina &eacute; a PK desta tabela.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde informa o nome da disciplina.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">conteudo</td><td class="tdTableDefinition">conteudo</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde informa o conte&uacute;do da disciplina.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">carga_horaria</td><td class="tdTableDefinition">carga_horaria</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde informa a carga horaria da disciplina.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">ementa</td><td class="tdTableDefinition">ementa</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde informa a ementa escolar.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_obra
+                &nbsp;(<a href="#OBRAS">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_obra</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde armazena o c&oacute;digo da obra, &eacute; a FK da tabela obras.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#OBRAS">OBRAS</a> through (codigo_da_obra)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#envolvem">envolvem</a> referencing (codigo_da_disciplina)</li>
+<li>
+<a href="#compoe">compoe</a> referencing (codigo_da_disciplina)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>emprestimos<a name="emprestimos"></a>
+</h1>
+<h2>
+      (Physical Name: emprestimos)
+      </h2>
+<p class="comment">Tabela onde armazena todos os emprestimos dos livros.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_do_inicio_do_emprestimo (PK)</td><td class="tdTableDefinition">data_do_inicio_do_emprestimo</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Data onde informa a data do inicio do emprestimo, &eacute; a PK desta tabela.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_obra (PK)
+                &nbsp;(<a href="#volumes">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_obra</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde informa o c&oacute;digo da obra, &eacute; a PK desta tabela e a PK da tabela volumes.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_do_volume (PK)
+                &nbsp;(<a href="#volumes">FK</a>)
+              </td><td class="tdTableDefinition">codigo_do_volume</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde informa o c&oacute;digo do volume, &eacute; a PK desta tabela e a PK da tabela volumes.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_pessoa (PK)
+                &nbsp;(<a href="#pessoas">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_pessoa</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_do_fim_do_emprestimo</td><td class="tdTableDefinition">data_do_fim_do_emprestimo</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Data onde informa o fim do imprestimo.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_devolucao</td><td class="tdTableDefinition">data_devolucao</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#volumes">volumes</a> through (codigo_da_obra, codigo_do_volume)</li>
+<li>
+<a href="#pessoas">pessoas</a> through (codigo_da_pessoa)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>Endereco<a name="Endereco"></a>
+</h1>
+<h2>
+      (Physical Name: Endereco)
+      </h2>
+<p class="comment">tabela onde ir&aacute; armazenar os dados dos endere&ccedil;os das pessoas</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_pessoa (PK)
+                &nbsp;(<a href="#pessoas">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_pessoa</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">logradouro</td><td class="tdTableDefinition">logradouro</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero</td><td class="tdTableDefinition">numero</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">compelmento</td><td class="tdTableDefinition">compelmento</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">bairro</td><td class="tdTableDefinition">bairro</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cidade</td><td class="tdTableDefinition">cidade</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">uf</td><td class="tdTableDefinition">uf</td><td class="tdTableDefinition">VARCHAR(2)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cep</td><td class="tdTableDefinition">cep</td><td class="tdTableDefinition">VARCHAR(8)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#pessoas">pessoas</a> through (codigo_da_pessoa)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>envolvem<a name="envolvem"></a>
+</h1>
+<h2>
+      (Physical Name: envolvem)
+      </h2>
+<p class="comment">Tabela onde armazena o c&oacute;digo da oferta e o c&oacute;digo da disciplina.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_oferta (PK)
+                &nbsp;(<a href="#ofertas">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_oferta</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo c&oacute;digo da oferta &eacute; a PK desta tabela e a PK da tabela disciplinas.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_disciplina (PK)
+                &nbsp;(<a href="#disciplinas">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_disciplina</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo c&oacute;digo da disciplina &eacute; a PK desta tabela e a PK da tabela disciplinas.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#ofertas">ofertas</a> through (codigo_da_oferta)</li>
+<li>
+<a href="#disciplinas">disciplinas</a> through (codigo_da_disciplina)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>graduacao<a name="graduacao"></a>
+</h1>
+<h2>
+      (Physical Name: graduacao)
+      </h2>
+<p class="comment">Tabela relacionada aos cursos de gradua&ccedil;&atilde;o e os alunos que se encontram neste requisito.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_pessoa (PK)
+                &nbsp;(<a href="#professores">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_pessoa</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">C&oacute;digo da pessoa que esta matriculada em algum curso de gradua&ccedil;&atilde;o.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_graduacao (PK)</td><td class="tdTableDefinition">codigo_da_graduacao</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#professores">professores</a> through (codigo_da_pessoa)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>OBRAS<a name="OBRAS"></a>
+</h1>
+<h2>
+      (Physical Name: OBRAS)
+      </h2>
+<p class="comment">Tabela onde se encontra todos os livros.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_obra (PK)</td><td class="tdTableDefinition">codigo_da_obra</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde armazena o c&oacute;digo da obra. &Eacute; a PK desta tabela.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">editora</td><td class="tdTableDefinition">editora</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde armazena os nomes das editoras.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde armazena o nome do livro.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#disciplinas">disciplinas</a> referencing (codigo_da_obra)</li>
+<li>
+<a href="#autor">autor</a> referencing (codigo_da_obra)</li>
+<li>
+<a href="#tipo">tipo</a> referencing (codigo_da_obra)</li>
+<li>
+<a href="#volumes">volumes</a> referencing (codigo_da_obra)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>ofertas<a name="ofertas"></a>
+</h1>
+<h2>
+      (Physical Name: ofertas)
+      </h2>
+<p class="comment">Tabela relacionada as mat&eacute;rias disponiveis ao periodo.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_oferta (PK)</td><td class="tdTableDefinition">codigo_da_oferta</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde armazena o c&oacute;digo da oferta, &eacute; a PK desta tabela.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_pessoa
+                &nbsp;(<a href="#professores">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_pessoa</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde informa o c&oacute;digo da pessoa ligada a oferta, &eacute; a FK desta tabela.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">semestre</td><td class="tdTableDefinition">semestre</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde informa o semestre desejado.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">quantidade_minima_alunos</td><td class="tdTableDefinition">quantidade_minima_alunos</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde informa a quantidade minima de alunos na disciplina.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">quantidade_maxima_alunos</td><td class="tdTableDefinition">quantidade_maxima_alunos</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde informa a quantidade m&aacute;xima de alunos na disciplina.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#professores">professores</a> through (codigo_da_pessoa)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#envolvem">envolvem</a> referencing (codigo_da_oferta)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>pessoas<a name="pessoas"></a>
+</h1>
+<h2>
+      (Physical Name: pessoas)
+      </h2>
+<p class="comment">Tabela que ir&aacute; armazenar os dados de todas as pessoas</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_pessoa (PK)
+                &nbsp;(<a href="#professores">FK</a>)
+              
+                &nbsp;(<a href="#alunos">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_pessoa</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_cadastro</td><td class="tdTableDefinition">data_cadastro</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">email</td><td class="tdTableDefinition">email</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#professores">professores</a> through (codigo_da_pessoa)</li>
+<li>
+<a href="#alunos">alunos</a> through (codigo_da_pessoa)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#telefone_pessoa">telefone_pessoa</a> referencing (codigo_da_pessoa)</li>
+<li>
+<a href="#reservas">reservas</a> referencing (codigo_da_pessoa)</li>
+<li>
+<a href="#emprestimos">emprestimos</a> referencing (codigo_da_pessoa)</li>
+<li>
+<a href="#Endereco">Endereco</a> referencing (codigo_da_pessoa)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>pos_graduacao<a name="pos_graduacao"></a>
+</h1>
+<h2>
+      (Physical Name: pos_graduacao)
+      </h2>
+<p class="comment">Tabela relacionada aos cursos de<br>p&oacute;s gradua&ccedil;&atilde;o e os alunos que se encontram neste requisito.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_pessoa (PK)
+                &nbsp;(<a href="#professores">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_pessoa</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">C&oacute;digo da pessoa que esta matriculada em algum curso de p&oacute;s gradua&ccedil;&atilde;o.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_pos_graduacao</td><td class="tdTableDefinition">codigo_pos_graduacao</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#professores">professores</a> through (codigo_da_pessoa)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>professores<a name="professores"></a>
+</h1>
+<h2>
+      (Physical Name: professores)
+      </h2>
+<p class="comment">Tabela onde onde informa o c&oacute;digo dos professores, &eacute; a PK desta tabela.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_pessoa (PK)</td><td class="tdTableDefinition">codigo_da_pessoa</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo c&oacute;digo da pessoa &eacute; a PK desta tabela.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#graduacao">graduacao</a> referencing (codigo_da_pessoa)</li>
+<li>
+<a href="#ofertas">ofertas</a> referencing (codigo_da_pessoa)</li>
+<li>
+<a href="#pos_graduacao">pos_graduacao</a> referencing (codigo_da_pessoa)</li>
+<li>
+<a href="#pessoas">pessoas</a> referencing (codigo_da_pessoa)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>reservas<a name="reservas"></a>
+</h1>
+<h2>
+      (Physical Name: reservas)
+      </h2>
+<p class="comment">Tabela onde armazena a reserva dos livros.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_obra (PK)
+                &nbsp;(<a href="#volumes">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_obra</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde armazena o c&oacute;digo da obra. &Eacute; a PK desta tabela e a PK da tabela obras.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_pessoa (PK)
+                &nbsp;(<a href="#pessoas">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_pessoa</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde armazena o c&oacute;odigo de da pessoa que esta reservando o livro, &eacute; a PK desta tabela.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_de_inicio_da_reserva (PK)</td><td class="tdTableDefinition">data_de_inicio_da_reserva</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Data de inicio da reserva dos livros.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_do_volume (PK)
+                &nbsp;(<a href="#volumes">FK</a>)
+              </td><td class="tdTableDefinition">codigo_do_volume</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Campo onde informa o volume de livros, &eacute; a PK desta tabela e a PK da tabela volumes.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_de_fim_da_reserva</td><td class="tdTableDefinition">data_de_fim_da_reserva</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Data onde informa o fim da reserva.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#volumes">volumes</a> through (codigo_da_obra, codigo_do_volume)</li>
+<li>
+<a href="#pessoas">pessoas</a> through (codigo_da_pessoa)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>telefone_pessoa<a name="telefone_pessoa"></a>
+</h1>
+<h2>
+      (Physical Name: telefone_pessoa)
+      </h2>
+<p class="comment">Tabela que ir&aacute; armazenar os telefones de cada pessoa</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_pessoa (PK)
+                &nbsp;(<a href="#pessoas">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_pessoa</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">telefone (PK)</td><td class="tdTableDefinition">telefone</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#pessoas">pessoas</a> through (codigo_da_pessoa)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>tipo<a name="tipo"></a>
+</h1>
+<h2>
+      (Physical Name: tipo)
+      </h2>
+<p class="comment">Tabela onde armazena o tipo de conte&uacute;do, livro, cd, dvd, revista.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_obra (PK)
+                &nbsp;(<a href="#OBRAS">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_obra</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">c&oacute;dido da obra &eacute; a PK desta tabela e a FK da tabela obras. Tabela armazena os tipos dos livros.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">livro</td><td class="tdTableDefinition">livro</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Tipo do campo.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cd</td><td class="tdTableDefinition">cd</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Tipo do campo.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">dvd</td><td class="tdTableDefinition">dvd</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Tipo do campo.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">revista</td><td class="tdTableDefinition">revista</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Tipo do campo.</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#OBRAS">OBRAS</a> through (codigo_da_obra)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>volumes<a name="volumes"></a>
+</h1>
+<h2>
+      (Physical Name: volumes)
+      </h2>
+<p class="comment">Tabela que armazena cada exemplar de um livro.</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_da_obra (PK)
+                &nbsp;(<a href="#OBRAS">FK</a>)
+              </td><td class="tdTableDefinition">codigo_da_obra</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">c&oacute;dido da obra &eacute; a PK desta tabela e a FK da tabela obras. Tabela armazena os c&oacute;digos dos t&iacute;tulos dos livros.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_do_volume (PK)</td><td class="tdTableDefinition">codigo_do_volume</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">c&oacute;dido do volume &eacute; a PK desta tabela e a FK da tabela obras.<br>Tabela que armazena a quantidade dos volumes.</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">edicao</td><td class="tdTableDefinition">edicao</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">ano_de_publicacao</td><td class="tdTableDefinition">ano_de_publicacao</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#OBRAS">OBRAS</a> through (codigo_da_obra)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#emprestimos">emprestimos</a> referencing (codigo_da_obra, codigo_do_volume)</li>
+<li>
+<a href="#reservas">reservas</a> referencing (codigo_da_obra, codigo_do_volume)</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
